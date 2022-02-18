@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crusader Kings 3", "Crusader Kings 3\Crusader Kings 3.csproj", "{FE76849C-6586-44BA-83FC-B37DA87FF43D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE76849C-6586-44BA-83FC-B37DA87FF43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE76849C-6586-44BA-83FC-B37DA87FF43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE76849C-6586-44BA-83FC-B37DA87FF43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE76849C-6586-44BA-83FC-B37DA87FF43D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {547D2413-BE43-4F18-8D76-88BEB51B354E}
+	EndGlobalSection
+EndGlobal
