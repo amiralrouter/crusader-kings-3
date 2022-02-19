@@ -10,5 +10,9 @@ namespace Crusader_Kings_3 {
     /// App.xaml etkileşim mantığı
     /// </summary>
     public partial class App : Application {
+
+        
+
+
     }
 }

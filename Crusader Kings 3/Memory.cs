@@ -23,7 +23,7 @@ namespace Crusader_Kings_3 {
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern int VirtualQueryEx(IntPtr hProcess, IntPtr lpAddress, out MEMORY_BASIC_INFORMATION lpBuffer, uint dwLength);
  
- 
+
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
 
@@ -151,6 +151,56 @@ namespace Crusader_Kings_3 {
         public static void setString(Int64 address, string value) {
             byte[] buffer = Encoding.ASCII.GetBytes(value);
             setBytes(address, buffer);
+        }
+
+
+        // <summary>
+        // read text from process memory
+        // 15 bytes string OR 8 bytes pointer
+        // 8 bytes length
+        // 1 byte is type. 0x0F = string, 0x1F = pointer 
+        //
+        // if name length bigger than 15 bytes, then it is pointer
+        // create virtual alloc for 64 bit process and 8 byte pointer for string
+        // </summary>
+        public static string getText(Int64 address) {
+            byte[] buffer = Memory.getBytes(address, 0x19);
+            int type = buffer[0x18];  
+            int length = buffer[0x10];
+            if (type == 0x0F) {
+                return Utils.GetString(buffer);
+            }
+            Int64 pointer = BitConverter.ToInt64(buffer, 0x0);
+            return Utils.GetString(Memory.getBytes(pointer, length)); 
+        }
+
+        // write text to process memory
+        public static void setText(Int64 address, string value) {
+            int length = value.Length;
+            byte[] buffer = new byte[0x19];
+            buffer[0x10] = (byte)length; 
+            buffer[0x18] = (byte)(length < 0x10 ? 0x0F : 0x1F);
+            if(length < 0x10){
+                Array.Copy(Encoding.UTF8.GetBytes(value), 0, buffer, 0x0, length);
+            }
+            else{
+                Int64 pointer = VirtualAlloc(length); 
+                Array.Copy(BitConverter.GetBytes(pointer), 0, buffer, 0x0, 8);
+                setBytes(pointer, Encoding.UTF8.GetBytes(value));
+                buffer[0x8] = 0x64;
+            }
+            setBytes(address, buffer); 
+        }
+
+
+
+
+        public static string getDate(Int64 address){
+            return "";
+        }
+
+        public static void setDate(Int64 address, string value){
+            // setString(address, value);
         }
     }
 }

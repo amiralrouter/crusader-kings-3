@@ -1,0 +1,14 @@
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\bin\Debug\Crusader Kings 3.exe
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\bin\Debug\Crusader Kings 3.pdb
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.csproj.AssemblyReference.cache
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\MainWindow.g.cs
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\App.g.cs
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3_MarkupCompile.cache
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3_MarkupCompile.lref
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\MainWindow.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.g.resources
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader_Kings_3.Properties.Resources.resources
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.csproj.GenerateResource.cache
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.csproj.CoreCompileInputs.cache
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.exe
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.pdb
