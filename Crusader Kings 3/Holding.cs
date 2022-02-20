@@ -93,8 +93,8 @@ namespace Crusader_Kings_3 {
         public int country;
 
 
-        public Holding(Int64 baseAddress) {
-            this.baseAddress = baseAddress;
+        public Holding(Int64 base_address) {
+            this.base_address = base_address;
         }
     }
 }

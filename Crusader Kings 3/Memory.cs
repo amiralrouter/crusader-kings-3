@@ -124,6 +124,21 @@ namespace Crusader_Kings_3 {
             setBytes(address, BitConverter.GetBytes(value));
         }
 
+        // read setInteger4 from process memory
+        public static int getInteger4(Int64 address) {
+            // read 8 byte as unsigned int64 and scale it 1000x to integer 
+            byte[] bytes = getBytes(address, 8);
+            Int64 value = BitConverter.ToInt64(bytes, 0);
+            return (int)(value / 1000);
+        }
+        // write Integer4 to process memory
+        public static void setInteger4(Int64 address, int value) {
+            Int64 scaledValue = value * 1000;
+            Int64 orginalValue = getInt64(address);
+            Int64 different = scaledValue - orginalValue; 
+            setInt64(address, orginalValue + different);
+        }
+
         // read Integer8 from process memory
         public static int getInteger8(Int64 address) { 
             // read 8 byte as unsigned int64 and scale it 100000x to integer 

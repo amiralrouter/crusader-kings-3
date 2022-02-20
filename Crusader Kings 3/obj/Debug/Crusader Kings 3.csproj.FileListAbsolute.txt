@@ -12,3 +12,25 @@ C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusade
 C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.csproj.CoreCompileInputs.cache
 C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.exe
 C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.pdb
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\App.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Theme\Generic.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Component\InputText.g.cs
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Component\InputText.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\bin\Debug\Crusader Kings 3.exe.config
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.csproj.SuggestedBindingRedirects.cache
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\bin\Debug\WPFToolkit.dll
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Themes\MetroDark\MetroDark.MSControls.Core.Implicit.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Themes\MetroDark\MetroDark.MSControls.Toolkit.Implicit.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Themes\MetroDark\Styles.Shared.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Themes\MetroDark\Styles.WPF.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Themes\MetroDark\Theme.Colors.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Crusader Kings 3.csproj.CopyComplete
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Component\PlayerComponent.g.cs
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Component\PlayerComponent.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Locales\tr.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Locales\en.baml
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Component\InputSelect.g.cs
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\Component\InputSelect.baml

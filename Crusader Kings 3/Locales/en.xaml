@@ -1,0 +1,36 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+     xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="t_ID">ID</system:String>
+    <system:String x:Key="t_Name">Name</system:String>
+    <system:String x:Key="t_CultureID">Culture ID</system:String>
+    <system:String x:Key="t_FaithID">Faith ID</system:String>
+    <system:String x:Key="t_DynastyID">Dynasty ID</system:String>
+    <system:String x:Key="t_BirthDate">Birth Date</system:String>
+    <system:String x:Key="t_Age">Age</system:String>
+    <system:String x:Key="t_Gender">Gender</system:String>
+    <system:String x:Key="t_SexualOrientation">Sexual Orientation</system:String>
+    <system:String x:Key="t_DNAHex">DNA Hex</system:String> 
+
+    <system:String x:Key="t_Gold">Gold</system:String>
+    <system:String x:Key="t_Prestige">Prestige</system:String>
+    <system:String x:Key="t_Piety">Piety</system:String>
+    <system:String x:Key="t_Stress">Stress</system:String>
+    <system:String x:Key="t_Dread">Dread</system:String>
+    <system:String x:Key="t_Fertility">Fertility</system:String>
+    <system:String x:Key="t_MaxFertility">Max Fertility</system:String>
+    <system:String x:Key="t_Health">Health</system:String>
+    <system:String x:Key="t_MaxHealth">Max Health</system:String>
+
+    <system:String x:Key="t_BaseStats">Base Stats</system:String>
+    <system:String x:Key="t_ModifiedStats">Modified Stats</system:String>
+    <system:String x:Key="t_Diplomacy">Diplomacy</system:String>
+    <system:String x:Key="t_Martial">Martial</system:String>
+    <system:String x:Key="t_Stewardship">Stewardship</system:String>
+    <system:String x:Key="t_Intrigue">Intrigue</system:String>
+    <system:String x:Key="t_Learning">Learning</system:String>
+    <system:String x:Key="t_Prowess">Prowess</system:String>
+
+</ResourceDictionary>

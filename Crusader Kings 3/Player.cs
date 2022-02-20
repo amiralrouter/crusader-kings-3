@@ -5,92 +5,15 @@ using System.Text;
 
 namespace Crusader_Kings_3 {
     public class Player : Model {
+        
         public enum Gender {
             Male, Female
         }
         public enum SexualOrientation {
             Heterosexual, Homosexual, Bisexual, Asexual, None
         }
-
-        public class DNA {
-            Player player;
-            public string Raw {
-                get {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0xF0);
-                    byte[] bytes = Memory.getBytes(pointer, 416);
-                    return BitConverter.ToString(bytes).Replace("-", "").Replace("0x", "");
-                }
-                set {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0xF0);
-                    byte[] bytes = new byte[416];
-                    for (int i = 0; i < value.Length; i += 2) {
-                        bytes[i / 2] = Convert.ToByte(value.Substring(i, 2), 16);
-                    }
-                    Memory.setBytes(pointer, bytes);
-                }
-            }
-            public DNA(Player player) {
-                this.player = player;
-            }
-        }
-         
-        public class Stats {
-            Player player;
-            Int64 offset;
-            public int Diplomacy {
-                get {
-                    return Memory.getByte(player.base_address + offset + 0x0);
-                }
-                set {
-                    Memory.setByte(player.base_address + offset + 0x0, (byte)Utils.HundredLimit(value));
-                }
-            }
-            public int Martial {
-                get {
-                    return Memory.getByte(player.base_address + offset + 0x1);
-                }
-                set {
-                    Memory.setByte(player.base_address + offset + 0x1, (byte)Utils.HundredLimit(value));
-                }
-            }
-            public int Stewardship {
-                get {
-                    return Memory.getByte(player.base_address + offset + 0x2);
-                }
-                set {
-                    Memory.setByte(player.base_address + offset + 0x2, (byte)Utils.HundredLimit(value));
-                }
-            }
-            public int Intrigue {
-                get {
-                    return Memory.getByte(player.base_address + offset + 0x3);
-                }
-                set {
-                    Memory.setByte(player.base_address + offset + 0x3, (byte)Utils.HundredLimit(value));
-                }
-            }
-            public int Learning {
-                get {
-                    return Memory.getByte(player.base_address + offset + 0x4);
-                }
-                set {
-                    Memory.setByte(player.base_address + offset + 0x4, (byte)Utils.HundredLimit(value));
-                }
-            }
-            public int Prowess {
-                get {
-                    return Memory.getByte(player.base_address + offset + 0x5);
-                }
-                set {
-                    Memory.setByte(player.base_address + offset + 0x5, (byte)Utils.HundredLimit(value));
-                }
-            }
-
-            public Stats(Player player, Int64 offset) {
-                this.player = player;
-                this.offset = offset;
-            }
-        }
+ 
+          
 
         public class Traits {
             Player player;
@@ -130,74 +53,6 @@ namespace Crusader_Kings_3 {
                 }
             }
             public Traits(Player player) {
-                this.player = player;
-            }
-        }
-
-        public class Lifestyle {
-            Player player;
-            public int Diplomacy {
-                get {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    return Memory.getInteger8(pointer + 0x8 + (0x10 * 0x0));
-                }
-                set {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    Memory.setInteger8(pointer + 0x8 + (0x10 * 0x0), value);
-                }
-            }
-            public int Martial {
-                get {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    return Memory.getInteger8(pointer + 0x8 + (0x10 * 0x1));
-                }
-                set {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    Memory.setInteger8(pointer + 0x8 + (0x10 * 0x1), value);
-                }
-            }
-            public int Stewardship {
-                get {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    return Memory.getInteger8(pointer + 0x8 + (0x10 * 0x2));
-                }
-                set {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    Memory.setInteger8(pointer + 0x8 + (0x10 * 0x2), value);
-                }
-            }
-            public int Intrigue {
-                get {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    return Memory.getInteger8(pointer + 0x8 + (0x10 * 0x3));
-                }
-                set {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    Memory.setInteger8(pointer + 0x8 + (0x10 * 0x3), value);
-                }
-            }
-            public int Learning {
-                get {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    return Memory.getInteger8(pointer + 0x8 + (0x10 * 0x4));
-                }
-                set {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x138);
-                    pointer = Memory.getInt64(pointer + 0x190);
-                    Memory.setInteger8(pointer + 0x8 + (0x10 * 0x4), value);
-                }
-            }
-
-            public Lifestyle(Player player) {
                 this.player = player;
             }
         }
@@ -270,6 +125,46 @@ namespace Crusader_Kings_3 {
             set {
                 Int64 pointer = Memory.getInt64(base_address + 0x148);
                 Memory.setInteger8(pointer + 0x250, value);
+            }
+        }
+        public int fertility {
+            get {
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                return Memory.getInteger4(pointer + 0x268);
+            }
+            set { 
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                Memory.setInteger4(pointer + 0x268, value);
+            }
+        }
+        public int max_fertility {
+            get {
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                return Memory.getInteger4(pointer + 0x308);
+            }
+            set { 
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                Memory.setInteger4(pointer + 0x308, value);
+            }
+        }
+        public int health {
+            get {
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                return Memory.getInteger8(pointer + 0x278);
+            }
+            set { 
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                Memory.setInteger8(pointer + 0x278, value);
+            }
+        }
+        public int max_health {
+            get {
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                return Memory.getInteger8(pointer + 0x310);
+            }
+            set { 
+                Int64 pointer = Memory.getInt64(base_address + 0x138);
+                Memory.setInteger8(pointer + 0x310, value);
             }
         }
 
@@ -373,11 +268,17 @@ namespace Crusader_Kings_3 {
         public Lifestyle lifestyle;
 
         public Player() { 
-            base_stats = new Stats(this, 0x80);
-            modified_stats = new Stats(this, 0x86); 
-            dna = new DNA(this);
+            base_stats = new Stats(base_address, 0x80);
+            modified_stats = new Stats(base_address, 0x86); 
+            dna = new DNA(base_address);
             traits = new Traits(this);
-            lifestyle = new Lifestyle(this);
+            //lifestyle = new Lifestyle(this);
+        }
+
+        public override void OnBaseAddressChanged(){
+            base_stats = new Stats(base_address, 0x80);
+            modified_stats = new Stats(base_address, 0x86); 
+            lifestyle = new Lifestyle(base_address);
         }
     }
 }

@@ -15,11 +15,12 @@ namespace Crusader_Kings_3 {
             set {
                 _base_address = value;
                 OnBaseAddressChanged();
-                province = new Province(Memory.getInt64(base_address + 0x40));
+                //province = new Province(Memory.getInt64(base_address + 0x40));
             }
         }
 
-        public void OnBaseAddressChanged(){
+ 
+        public virtual void OnBaseAddressChanged(){
 
         }
 

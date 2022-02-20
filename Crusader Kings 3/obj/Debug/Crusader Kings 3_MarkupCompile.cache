@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\obj\Debug\
 Crusader_Kings_3
 none
 false
 DEBUG;TRACE
-c:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\App.xaml
-1219584333
+C:\Users\Amiral\source\repos\Crusader Kings 3\Crusader Kings 3\App.xaml
+121636175325
 
-8-1078847006
-10-1192249692
-MainWindow.xaml;
+23-337064018
+15-1548466517
+Component\InputSelect.xaml;Component\InputText.xaml;Component\PlayerComponent.xaml;Locales\tr.xaml;MainWindow.xaml;Locales\en.xaml;Themes\MetroDark\MetroDark.MSControls.Core.Implicit.xaml;Themes\MetroDark\MetroDark.MSControls.Toolkit.Implicit.xaml;Themes\MetroDark\Styles.Shared.xaml;Themes\MetroDark\Styles.WPF.xaml;Themes\MetroDark\Theme.Colors.xaml;Theme\Generic.xaml;
 
-True
+False
 

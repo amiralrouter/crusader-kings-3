@@ -75,7 +75,7 @@ namespace Crusader_Kings_3 {
         }
 
         
-        public List<Doctrines> doctrines;
+        public List<Doctrine> doctrines;
 
 
         public Faith(Int64 base_address) {
@@ -85,9 +85,9 @@ namespace Crusader_Kings_3 {
         public override void OnBaseAddressChanged(){
 
             // this part will be edited later
-            doctrines = new List<Doctrines>();
-            foreach (var d in Memory.getArray(base_address + 0x1C0, 0x10)) {
-                doctrines.Add(new Doctrines(d));
+            doctrines = new List<Doctrine>();
+            foreach (var d in Memory.getBytes(base_address + 0x1C0, 0x10)) {
+                doctrines.Add(new Doctrine(d));
             }
         }
     }

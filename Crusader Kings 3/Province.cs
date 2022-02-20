@@ -28,6 +28,10 @@ namespace Crusader_Kings_3 {
 
         public Holding holding;
 
+        public Province(Int64 base_address) {
+            this.base_address = base_address;
+            holding = new Holding(Memory.getInt64(base_address + 0x40));
+        }
  
         public override void OnBaseAddressChanged() {
             base.OnBaseAddressChanged(); 

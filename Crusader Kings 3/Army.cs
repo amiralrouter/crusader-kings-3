@@ -81,7 +81,7 @@ namespace Crusader_Kings_3 {
             }
         }
 
-        public int last_supply_date{
+        public string last_supply_date{
             get {
                 return Memory.getDate(base_address + 0x128);
             }
@@ -90,7 +90,7 @@ namespace Crusader_Kings_3 {
             }
         }
 
-        public int gathered_date{
+        public string gathered_date{
             get {
                 return Memory.getDate(base_address + 0x130);
             }
@@ -100,7 +100,7 @@ namespace Crusader_Kings_3 {
         }
 
 
-        public List<Regiments> regiments = new List<Regiments>();
+        public List<Regiment> regiments = new List<Regiment>();
 
 
         public Army(Int64 base_address) {

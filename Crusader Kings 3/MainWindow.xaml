@@ -3,10 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Crusader_Kings_3"
+        xmlns:local="clr-namespace:Crusader_Kings_3" 
+        xmlns:component="clr-namespace:Crusader_Kings_3.Component" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1129" 
+        >
     <Grid>
-        
+        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
+            <TabItem Header="Main Player" >
+                <component:PlayerComponent x:Name="MainPlayer"/>
+            </TabItem>
+            <TabItem Header="Selected Player">
+                <component:PlayerComponent  x:Name="SelectedPlayer"/>
+            </TabItem> 
+            <TabItem Header="Faith"> 
+            </TabItem> 
+            <TabItem Header="Army"> 
+            </TabItem> 
+            <TabItem Header="Siege"> 
+            </TabItem> 
+            <TabItem Header="Holding"> 
+            </TabItem> 
+            <TabItem Header="Culture"> 
+            </TabItem> 
+        </TabControl>
+
     </Grid>
 </Window>
