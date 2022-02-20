@@ -73,9 +73,13 @@
     <Compile Include="Component\PlayerComponent.xaml.cs">
       <DependentUpon>PlayerComponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Component\TraitListComponent.xaml.cs">
+      <DependentUpon>TraitListComponent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Culture.cs" />
     <Compile Include="DNA.cs" />
     <Compile Include="Faith.cs" />
+    <Compile Include="Focus.cs" />
     <Compile Include="Holding.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Lifestyle.cs" />
@@ -84,6 +88,8 @@
     <Compile Include="Regiment.cs" />
     <Compile Include="Siege.cs" />
     <Compile Include="Stats.cs" />
+    <Compile Include="Trait.cs" />
+    <Compile Include="Traits.cs" />
     <Compile Include="Utils.cs" />
     <Page Include="Component\InputSelect.xaml">
       <SubType>Designer</SubType>
@@ -94,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Component\PlayerComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\TraitListComponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

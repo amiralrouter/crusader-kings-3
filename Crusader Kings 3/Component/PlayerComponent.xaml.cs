@@ -58,14 +58,27 @@ namespace Crusader_Kings_3.Component {
                 ModifiedStatsIntrigue.Value = player.modified_stats.intrigue.ToString();
                 ModifiedStatsLearning.Value = player.modified_stats.learning.ToString();
                 ModifiedStatsProwess.Value = player.modified_stats.prowess.ToString();
-                
+
+                LifestyleDiplomacy.Value = player.lifestyle.diplomacy.ToString();
+                LifestyleMartial.Value = player.lifestyle.martial.ToString();
+                LifestyleStewardship.Value = player.lifestyle.stewardship.ToString();
+                LifestyleIntrigue.Value = player.lifestyle.intrigue.ToString();
+                LifestyleLearning.Value = player.lifestyle.learning.ToString();
+
+                FocusType.Value = player.focus.type.ToString();
+                FocusStartDate.Value = player.focus.start_date.ToString();
+                FocusEndDate.Value = player.focus.end_date.ToString();
+                FocusChanges.Value = player.focus.changes.ToString();
+                FocusProgress.Value = player.focus.progress.ToString();
+
+
             });
         }
 
  
 
-        private void ID_Change(object sender, string e) {
-            Console.WriteLine(e); 
+        private void ID_Change(object sender, string e) { 
+            // player.id = e;
         }
 
         private void Name_Change(object sender, string e) {
@@ -143,6 +156,8 @@ namespace Crusader_Kings_3.Component {
                 player.max_health = int.Parse(e);
         }
 
+
+
         private void BaseStatsDiplomacy_Change(object sender, string e) { 
             if (player != null)
                 player.base_stats.diplomacy = int.Parse(e);
@@ -173,6 +188,8 @@ namespace Crusader_Kings_3.Component {
                 player.base_stats.prowess = int.Parse(e);
         }
 
+
+
         private void ModifiedStatsDiplomacy_Change(object sender, string e) { 
             if (player != null)
                 player.modified_stats.diplomacy = int.Parse(e);
@@ -201,6 +218,60 @@ namespace Crusader_Kings_3.Component {
         private void ModifiedStatsProwess_Change(object sender, string e) { 
             if (player != null)
                 player.modified_stats.prowess = int.Parse(e);
+        }
+   
+
+
+        private void LifestyleDiplomacy_Change(object sender, string e) { 
+            if (player != null)
+                player.lifestyle.diplomacy = int.Parse(e);
+        }
+
+        private void LifestyleMartial_Change(object sender, string e) { 
+            if (player != null)
+                player.lifestyle.martial = int.Parse(e);
+        }
+
+        private void LifestyleStewardship_Change(object sender, string e) { 
+            if (player != null)
+                player.lifestyle.stewardship = int.Parse(e);
+        }
+
+        private void LifestyleIntrigue_Change(object sender, string e) { 
+            if (player != null)
+                player.lifestyle.intrigue = int.Parse(e);
+        }
+
+        private void LifestyleLearning_Change(object sender, string e) { 
+            if (player != null)
+                player.lifestyle.learning = int.Parse(e);
+        }
+
+
+
+        private void FocusType_Change(object sender, string e) { 
+            if (player != null)
+                player.focus.type = e;
+        }
+
+        private void FocusStartDate_Change(object sender, string e) {  
+            if (player != null)
+                player.focus.start_date = e;
+        }
+
+        private void FocusEndDate_Change(object sender, string e) { 
+            if (player != null)
+                player.focus.end_date = e;
+        }
+
+        private void FocusChanges_Change(object sender, string e) { 
+            if (player != null)
+                player.focus.changes = int.Parse(e);
+        }
+
+        private void FocusProgress_Change(object sender, string e) { 
+            if (player != null)
+                player.focus.progress = int.Parse(e);
         }
     }
 }

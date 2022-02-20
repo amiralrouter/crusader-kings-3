@@ -33,4 +33,11 @@
     <system:String x:Key="t_Learning">Learning</system:String>
     <system:String x:Key="t_Prowess">Prowess</system:String>
 
+    <system:String x:Key="t_Focus">Focus</system:String>
+    <system:String x:Key="t_FocusType">Focus Type</system:String>
+    <system:String x:Key="t_StartDate">Start Date</system:String>
+    <system:String x:Key="t_EndDate">End Date</system:String>
+    <system:String x:Key="t_Changes">Changes</system:String>
+    <system:String x:Key="t_Progress">Progress</system:String>
+
 </ResourceDictionary>

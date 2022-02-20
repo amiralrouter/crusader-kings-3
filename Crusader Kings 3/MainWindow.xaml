@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1129" 
         >
-    <Grid>
+    <Grid Background="#f1f5f9">
         <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
             <TabItem Header="Main Player" >
                 <component:PlayerComponent x:Name="MainPlayer"/>

@@ -33,5 +33,9 @@ namespace Crusader_Kings_3 {
             }
             Timers.Clear();
         }
+
+
+
+        public static List<Trait> Traits = new List<Trait>();
     }
 }

@@ -12,50 +12,7 @@ namespace Crusader_Kings_3 {
         public enum SexualOrientation {
             Heterosexual, Homosexual, Bisexual, Asexual, None
         }
- 
-          
-
-        public class Traits {
-            Player player;
-            public int Max {
-                get {
-                    return Memory.getInt(player.base_address + 0x98);
-                }
-                set {
-                    Memory.setInt(player.base_address + 0x98, value);
-                }
-            }
-            public int Count {
-                get {
-                    return Memory.getInt(player.base_address + 0x9C);
-                }
-                set {
-                    value = Math.Min(Max, Math.Max(value, 0));
-                    Memory.setInt(player.base_address + 0x9C, value);
-                }
-            }
-            public int[] List {
-                get {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x90);
-                    byte[] bytes = Memory.getBytes(pointer, Count * 0x4);
-                    int[] traits = new int[Count];
-                    for (int i = 0; i < Count; i++)
-                        traits[i] = BitConverter.ToInt32(bytes, i * 0x4);
-
-                    return traits;
-                }
-                set {
-                    Int64 pointer = Memory.getInt64(player.base_address + 0x90);
-                    int count = Math.Min(value.Length, Max);
-                    for (int i = 0; i < count; i++)
-                        Memory.setInt(pointer + (i * 0x4), value[i]);
-                    Count = count;
-                }
-            }
-            public Traits(Player player) {
-                this.player = player;
-            }
-        }
+  
 
  
 
@@ -264,21 +221,26 @@ namespace Crusader_Kings_3 {
         public Stats base_stats;
         public Stats modified_stats; 
         public DNA dna;
-        public Traits traits;
         public Lifestyle lifestyle;
+        public Focus focus;
+        public Traits traits;
 
         public Player() { 
             base_stats = new Stats(base_address, 0x80);
             modified_stats = new Stats(base_address, 0x86); 
             dna = new DNA(base_address);
-            traits = new Traits(this);
-            //lifestyle = new Lifestyle(this);
+            lifestyle = new Lifestyle(base_address);
+            focus = new Focus(Memory.getInt64(Memory.getInt64(base_address + 0x138) + 0x218));
+            traits = new Traits(base_address);
         }
 
         public override void OnBaseAddressChanged(){
             base_stats = new Stats(base_address, 0x80);
             modified_stats = new Stats(base_address, 0x86); 
+            dna = new DNA(base_address);
             lifestyle = new Lifestyle(base_address);
+            focus = new Focus(Memory.getInt64(Memory.getInt64(base_address + 0x138) + 0x218));
+            traits = new Traits(base_address);
         }
     }
 }

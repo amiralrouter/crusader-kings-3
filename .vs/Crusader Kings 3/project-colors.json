@@ -5,6 +5,11 @@
       "ProjectGuid": "fe76849c-6586-44ba-83fc-b37da87ff43d",
       "DisplayName": "Crusader Kings 3",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Diğer Dosyalar",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

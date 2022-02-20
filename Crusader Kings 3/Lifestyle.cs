@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Crusader_Kings_3 {
     public class Lifestyle : Model {
-        public int Diplomacy {
+        public int diplomacy {
             get {
                 Int64 pointer = Memory.getInt64(base_address + 0x138);
                 pointer = Memory.getInt64(pointer + 0x190);
@@ -17,7 +17,7 @@ namespace Crusader_Kings_3 {
                 Memory.setInteger8(pointer + 0x8 + (0x10 * 0x0), value);
             }
         }
-        public int Martial {
+        public int martial {
             get {
                 Int64 pointer = Memory.getInt64(base_address + 0x138);
                 pointer = Memory.getInt64(pointer + 0x190);
@@ -29,7 +29,7 @@ namespace Crusader_Kings_3 {
                 Memory.setInteger8(pointer + 0x8 + (0x10 * 0x1), value);
             }
         }
-        public int Stewardship {
+        public int stewardship {
             get {
                 Int64 pointer = Memory.getInt64(base_address + 0x138);
                 pointer = Memory.getInt64(pointer + 0x190);
@@ -41,7 +41,7 @@ namespace Crusader_Kings_3 {
                 Memory.setInteger8(pointer + 0x8 + (0x10 * 0x2), value);
             }
         }
-        public int Intrigue {
+        public int intrigue {
             get {
                 Int64 pointer = Memory.getInt64(base_address + 0x138);
                 pointer = Memory.getInt64(pointer + 0x190);
@@ -53,7 +53,7 @@ namespace Crusader_Kings_3 {
                 Memory.setInteger8(pointer + 0x8 + (0x10 * 0x3), value);
             }
         }
-        public int Learning {
+        public int learning {
             get {
                 Int64 pointer = Memory.getInt64(base_address + 0x138);
                 pointer = Memory.getInt64(pointer + 0x190);

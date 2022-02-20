@@ -2,14 +2,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:component="clr-namespace:Crusader_Kings_3.Component"
     >
-
-
-    <Style TargetType="Grid" x:Key="MainContainer">
-        <Setter Property="Background" Value="White" />
-    </Style>
+ 
     
     
-    <Style TargetType="TabItem" x:Key="MainTabItem">
+    <Style TargetType="TabItem">
         <Setter Property="Padding" Value="16 10" />
     </Style>
 
@@ -23,10 +19,17 @@
             </Style>
         </Style.Resources>
     </Style>
+    
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="White" />
+    </Style>
+    
+    <Style TargetType="ComboBox">
+        <Setter Property="Background" Value="White" />
+    </Style>
 
-    
-    
-     
+
+
 
 
 </ResourceDictionary>

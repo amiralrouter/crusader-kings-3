@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              x:Name="PlayerController">
-    <Grid Background="White" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch"   Margin="0,0,0,0">
+    <Grid HorizontalAlignment="Stretch"   VerticalAlignment="Stretch"   Margin="0,0,0,0"  Background="#f1f5f9">
         <Grid.RowDefinitions> 
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
@@ -70,12 +70,22 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="3" Margin="10">
-            <component:InputText Label="Diplomacy"/>
-            <component:InputText Label="Martial"/>
+            <component:InputText x:Name="LifestyleDiplomacy" Label="{DynamicResource t_Diplomacy}" Change="LifestyleDiplomacy_Change"/>
+            <component:InputText x:Name="LifestyleMartial" Label="{DynamicResource t_Martial}" Change="LifestyleMartial_Change"/>
+            <component:InputText x:Name="LifestyleStewardship" Label="{DynamicResource t_Stewardship}" Change="LifestyleStewardship_Change"/>
+            <component:InputText x:Name="LifestyleIntrigue" Label="{DynamicResource t_Intrigue}" Change="LifestyleIntrigue_Change"/>
+            <component:InputText x:Name="LifestyleLearning" Label="{DynamicResource t_Learning}" Change="LifestyleLearning_Change"/>
+
+            <Label Content="{DynamicResource t_Focus}" FontWeight="SemiBold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+            <component:InputText x:Name="FocusType" Label="{DynamicResource t_FocusType}" Change="FocusType_Change"/>
+            <component:InputText x:Name="FocusStartDate" Label="{DynamicResource t_StartDate}" Change="FocusStartDate_Change"/>
+            <component:InputText x:Name="FocusEndDate" Label="{DynamicResource t_EndDate}" Change="FocusEndDate_Change"/>
+            <component:InputText x:Name="FocusChanges" Label="{DynamicResource t_Changes}" Change="FocusChanges_Change"/>
+            <component:InputText x:Name="FocusProgress" Label="{DynamicResource t_Progress}" Change="FocusProgress_Change"/>
         </StackPanel>
+        
         <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="4" Margin="10">
-            <component:InputText Label="Diplomacy"/>
-            <component:InputText Label="Martial"/>
+            <component:TraitListComponent />
         </StackPanel>
 
     </Grid>
