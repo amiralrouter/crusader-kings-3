@@ -83,10 +83,11 @@
             <component:InputText x:Name="FocusChanges" Label="{DynamicResource t_Changes}" Change="FocusChanges_Change"/>
             <component:InputText x:Name="FocusProgress" Label="{DynamicResource t_Progress}" Change="FocusProgress_Change"/>
         </StackPanel>
-        
-        <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="4" Margin="10">
-            <component:TraitListComponent />
+
+        <StackPanel x:Name="TraitListComponentWrapper" Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="4" Margin="10">
+            <component:TraitListComponent x:Name="TraitList" HorizontalAlignment="Stretch" Height="{Binding ElementName=TraitListComponentWrapper, Path=ActualHeight}"/>
         </StackPanel>
 
     </Grid>
+
 </UserControl>

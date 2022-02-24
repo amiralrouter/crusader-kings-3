@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Crusader_Kings_3 {
     static class Utils {
+
+        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool DeleteObject([In] IntPtr hObject);
 
         // return string in bytes until null byte
         public static string GetString(byte[] buffer) {
@@ -37,5 +46,19 @@ namespace Crusader_Kings_3 {
 
 
         public static List<Trait> Traits = new List<Trait>();
+
+        public static BitmapSource BitmapToImageSource(Bitmap bmp){
+            var handle = bmp.GetHbitmap();
+            try {
+                ImageSource newSource = Imaging.CreateBitmapSourceFromHBitmap(handle, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+
+                DeleteObject(handle);
+                return (BitmapSource)newSource;
+            }
+            catch (Exception ex) {
+                DeleteObject(handle);
+                return null;
+            }
+        }
     }
 }

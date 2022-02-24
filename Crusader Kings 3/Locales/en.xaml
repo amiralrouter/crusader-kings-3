@@ -40,4 +40,9 @@
     <system:String x:Key="t_Changes">Changes</system:String>
     <system:String x:Key="t_Progress">Progress</system:String>
 
+    <system:String x:Key="t_Refresh">Refresh</system:String>
+    <system:String x:Key="t_Save">Save</system:String>
+    <system:String x:Key="t_Delete">Delete</system:String>
+    <system:String x:Key="t_Apply">Apply</system:String>
+
 </ResourceDictionary>

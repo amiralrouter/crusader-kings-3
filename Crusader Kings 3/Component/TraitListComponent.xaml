@@ -5,17 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Crusader_Kings_3.Component"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> 
-        <ListView Margin="10,10,0,13" Name="ListView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="194" Height="200">
-            <ListViewItem Background="LightSlateGray" Foreground="Orange" FontFamily="Georgia" FontSize="14" FontWeight="Bold">
-                <CheckBox Name="MangoShakeCheckBox">
-                    <StackPanel Orientation="Horizontal">
-                        <!--<Image Source="MangoShake.jpg" Height="30"></Image>-->
-                        <TextBlock Text="Mango Shake"></TextBlock>
-                    </StackPanel>
-                </CheckBox>
-            </ListViewItem>
+             d:DesignHeight="209" d:DesignWidth="269"
+             HorizontalAlignment="Stretch" 
+             VerticalAlignment="Stretch"
+>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="26"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <local:InputText Label="Search" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,10" Change="Search_Change"/>
+
+        <ListView    
+            Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"
+            Name="ListView1" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch" 
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
+            ScrollViewer.CanContentScroll="False" 
+            Margin="0,0,0,5"
+        >  
         </ListView>
+
+        <Button Grid.Column="0" Grid.Row="2" Margin="0,0,2,0" Content="{DynamicResource t_Refresh}" Click="RefreshProfile_Click"></Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="2,0,2,0" Content="{DynamicResource t_Save}" Click="SaveProfile_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="2" Margin="2,0,2,0" Content="{DynamicResource t_Delete}" Click="DeleteProfile_Click"></Button>
+        <Button Grid.Column="3" Grid.Row="2" Margin="2,0,0,0" Content="{DynamicResource t_Apply}" Click="ApplyProfile_Click"></Button>
+
+        <ListView x:Name="TraitProfilesList" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Margin="0,5,0,0"></ListView>
     </Grid>
 </UserControl>

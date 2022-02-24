@@ -71,7 +71,7 @@ namespace Crusader_Kings_3.Component {
                 FocusChanges.Value = player.focus.changes.ToString();
                 FocusProgress.Value = player.focus.progress.ToString();
 
-
+                TraitList.SetPlayerTraits(player.traits);
             });
         }
 

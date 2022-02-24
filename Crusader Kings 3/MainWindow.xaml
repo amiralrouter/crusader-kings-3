@@ -4,28 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Crusader_Kings_3" 
-        xmlns:component="clr-namespace:Crusader_Kings_3.Component" 
+        xmlns:module="clr-namespace:Crusader_Kings_3.Module" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1129" 
+        Title="MainWindow" Height="588" Width="1179" 
         >
-    <Grid Background="#f1f5f9">
-        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
+    <Grid Background="#f1f5f9"> 
+        <TabControl x:Name="tabControl" Grid.ColumnSpan="2">
             <TabItem Header="Main Player" >
-                <component:PlayerComponent x:Name="MainPlayer"/>
+                <module:ModulePlayer x:Name="MainPlayer"/>
             </TabItem>
             <TabItem Header="Selected Player">
-                <component:PlayerComponent  x:Name="SelectedPlayer"/>
-            </TabItem> 
-            <TabItem Header="Faith"> 
-            </TabItem> 
-            <TabItem Header="Army"> 
-            </TabItem> 
-            <TabItem Header="Siege"> 
-            </TabItem> 
-            <TabItem Header="Holding"> 
-            </TabItem> 
-            <TabItem Header="Culture"> 
-            </TabItem> 
+                <module:ModulePlayer  x:Name="SelectedPlayer"/>
+            </TabItem>
+            <TabItem Header="Faith">
+            </TabItem>
+            <TabItem Header="Army">
+            </TabItem>
+            <TabItem Header="Siege">
+            </TabItem>
+            <TabItem Header="Holding">
+            </TabItem>
+            <TabItem Header="Culture">
+            </TabItem>
         </TabControl>
 
     </Grid>

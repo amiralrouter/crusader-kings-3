@@ -48,6 +48,9 @@ namespace Crusader_Kings_3 {
 
         public static IntPtr baseAddress{
             get {
+                if(process == null)
+                    return IntPtr.Zero;
+
                 return process.MainModule.BaseAddress;
             }
         }
@@ -72,6 +75,8 @@ namespace Crusader_Kings_3 {
 
         // read bytes from process memory
         public static byte[] getBytes(Int64 address, int size) {
+            if (process == null)
+                return new byte[size];
             byte[] buffer = new byte[size];
             int bytesRead = 0;
             ReadProcessMemory(handle, address, buffer, (uint)size, out bytesRead);

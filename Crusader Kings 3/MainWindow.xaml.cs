@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows;
@@ -24,9 +26,9 @@ namespace Crusader_Kings_3 {
             dict.Source = new Uri("..\\Locales\\"+ Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName +".xaml", UriKind.Relative);
             dict.Source = new Uri("..\\Locales\\en.xaml", UriKind.Relative);
             this.Resources.MergedDictionaries.Add(dict);
-             
 
             InitializeComponent();
+
 
 
 
@@ -47,22 +49,26 @@ namespace Crusader_Kings_3 {
              
 
             SelectedPlayer.player = new Player();
+
         }
 
 
         public void LoadTraits() {
-            Int64 aob_trait_list = ((long)Memory.baseAddress + 0x11BF196);
+            // Int64 aob_trait_list = ((long)Memory.baseAddress + 0x11BF196);
 
-            Int64 pTraitArena = Memory.getInt64(aob_trait_list + Memory.getInt(aob_trait_list + 0x0F) + 0x0F + 0x04);
-            Int64 pTraitList = Memory.getInt64(pTraitArena + 0xA0);
-            int pTraitCount = Memory.getInt(pTraitArena + 0xAC);
-            string asd = "";
-            for (int i = 0; i < pTraitCount; i++) {
-                Int64 pointer = Memory.getInt64(pTraitList + i * 8);
-                string id = Memory.getText(pointer + 0x18);
-                Utils.Traits.Add(new Trait(id));
-                asd += id + "\n";
-            }
+            // Int64 pTraitArena = Memory.getInt64(aob_trait_list + Memory.getInt(aob_trait_list + 0x0F) + 0x0F + 0x04);
+            // Int64 pTraitList = Memory.getInt64(pTraitArena + 0xA0);
+            // int pTraitCount = Memory.getInt(pTraitArena + 0xAC);
+            // string asd = "";
+            // for (int i = 0; i < pTraitCount; i++) {
+            //     Int64 pointer = Memory.getInt64(pTraitList + i * 8);
+            //     string id = Memory.getText(pointer + 0x18);
+            //     Utils.Traits.Add(new Trait(id));
+            //     asd += id + "\n";
+            // }
+
+            // read Properties.Resources.TraitList and add to Utils.Traits
+
              
         }
     }

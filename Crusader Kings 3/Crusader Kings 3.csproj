@@ -37,9 +37,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Infragistics.Themes.MetroDark.Wpf.1.0.0\lib\net40\System.Windows.Controls.Input.Toolkit.dll</HintPath>
     </Reference>
@@ -78,6 +80,21 @@
     </Compile>
     <Compile Include="Culture.cs" />
     <Compile Include="DNA.cs" />
+    <Compile Include="Element\DynamicList.xaml.cs">
+      <DependentUpon>DynamicList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Element\InputSelect.xaml.cs">
+      <DependentUpon>InputSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Element\InputText.xaml.cs">
+      <DependentUpon>InputText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ModuleFaith.xaml.cs">
+      <DependentUpon>ModuleFaith.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\ModulePlayer.xaml.cs">
+      <DependentUpon>ModulePlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Faith.cs" />
     <Compile Include="Focus.cs" />
     <Compile Include="Holding.cs" />
@@ -89,6 +106,7 @@
     <Compile Include="Siege.cs" />
     <Compile Include="Stats.cs" />
     <Compile Include="Trait.cs" />
+    <Compile Include="TraitManager.cs" />
     <Compile Include="Traits.cs" />
     <Compile Include="Utils.cs" />
     <Page Include="Component\InputSelect.xaml">
@@ -104,6 +122,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Component\TraitListComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Element\DynamicList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Element\InputSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Element\InputText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Module\ModuleFaith.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Module\ModulePlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +220,810 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Themes\MetroDark\HowToApplyTheme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\seducer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\shieldmaiden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\shrewd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\shy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\sickly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\smallpox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\sodomite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\spindly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\strategist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\strong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\stubborn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\stuttering.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\temperate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\theologian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\torturer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\trusting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\twin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\typhus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\unyielding_defender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\varangian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\vengeful.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\viking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\warlike_court_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\warlike_court_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\weak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\wheezing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\whole_of_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\wild_oat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\winter_soldier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\witch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\wounded_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\wounded_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\wounded_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\wrathful.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\zealous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\administrative_court_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\administrative_court_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\adulterer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\adventurer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\aggressive_attacker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\albino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\ambitious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\arbitrary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\architect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\arrogant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\athletic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\august.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\augustus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\avaricious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bastard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bastard_founder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\beauty_bad_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\beauty_bad_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\beauty_bad_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\beauty_good_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\beauty_good_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\beauty_good_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\berserker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\blademaster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\blademaster_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\blademaster_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\blademaster_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bleeder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\blind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\blood_of_prophet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\born_in_the_purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bossy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\brave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\bubonic_plague.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\callous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\calm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\cancer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\cannibal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\cautious_leader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\celibate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\chakravarti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\charming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\chaste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\child_of_concubine_female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\child_of_concubine_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\clubfooted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\comfort_eater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\compassionate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\confider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\consecrated_blood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\consumption.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\contrite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\craven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\crusader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\crusader_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\curious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\cynical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\deceitful.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\denounced.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\depressed_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\depressed_genetic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\desert_warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\deviant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\devoted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\diligent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\diplomat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\diplomatic_court_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\diplomatic_court_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\disfigured.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\disinherited.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\disputed_heritage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\divine_blood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\drunkard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\dull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\dwarf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\early_great_pox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_diplomacy_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_diplomacy_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_diplomacy_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_diplomacy_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_intrigue_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_intrigue_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_intrigue_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_intrigue_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_learning_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_learning_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_learning_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_learning_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_prowess_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_prowess_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_prowess_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_martial_prowess_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_stewardship_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_stewardship_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_stewardship_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\education_stewardship_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\eunuch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\excommunicated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\faith_warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\family_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\fecund.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\fickle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\flagellant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\flexible_leader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\forder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\forest_fighter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\forgiving.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\fornicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\gallant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\generous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\giant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\gluttonous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\gout_ridden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\great_pox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\greatest_of_khans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\greedy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\gregarious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\hajjaj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\hashishiyah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\henbane_addict.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\heresiarch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\holy_warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\honest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\humble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\hunchbacked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\hunter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\hunter_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\hunter_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\hunter_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\ill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\impatient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\impotent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\improvident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\inappetetic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\inbred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\incapable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\incestuous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\infertile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\infirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intellect_bad_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intellect_bad_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intellect_bad_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intellect_good_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intellect_good_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intellect_good_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intrigue_court_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\intrigue_court_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\irritable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\journaller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\jungle_stalker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\just.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\kinslayer_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\kinslayer_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\kinslayer_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lazy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\legitimized_bastard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\leper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lifestyle_gardener.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Lifestyle_herbalist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lisping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\logistician.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lovers_pox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lunatic_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lunatic_genetic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\lustful.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\maimed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\military_engineer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\mujahid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\murderer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\mystic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\mystic_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\mystic_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\mystic_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\one_eyed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\one_legged.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\open_terrain_expert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\opium_addled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\order_member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\organizer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\overseer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\paragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\paranoid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\peasant_leader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\pensive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physician.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physician_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physician_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physician_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physique_bad_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physique_bad_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physique_bad_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physique_good_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physique_good_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\physique_good_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\pilgrim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\pneumonic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\poet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\possessed_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\possessed_genetic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\pregnant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\profligate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\pure_blooded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\rakish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reaver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reckless.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reclusive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reincarnation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reveler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reveler_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reveler_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\reveler_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\rough_terrain_expert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\rowdy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\sadistic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\saint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\saoshyant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\saoshyant_descendant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\savior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\sayyid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\scaly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\scarred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\schemer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\scholar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\scholarly_court_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\scholarly_court_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trait_ids.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

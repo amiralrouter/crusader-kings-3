@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="Crusader_Kings_3.Module.ModulePlayer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Crusader_Kings_3.Module"
+             xmlns:element="clr-namespace:Crusader_Kings_3.Element"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="900"
+             x:Name="ModulePlayerUserControl"
+             >
+    <Grid HorizontalAlignment="Stretch"   VerticalAlignment="Stretch"   Margin="0,0,0,0"  Background="#f1f5f9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="0"  Margin="10">
+            <element:InputText x:Name="ID" Label="{DynamicResource t_ID}" Change="ID_Change"  />
+            <element:InputText x:Name="Name" Label="{DynamicResource t_Name}" Change="Name_Change"/>
+            <element:InputText x:Name="CultureID" Label="{DynamicResource t_CultureID}" Change="CultureID_Change"/>
+            <element:InputText x:Name="FaithID" Label="{DynamicResource t_FaithID}" Change="FaithID_Change"/>
+            <element:InputText x:Name="DynastyID" Label="{DynamicResource t_DynastyID}" Change="DynastyID_Change"/>
+            <element:InputText x:Name="BirthDate" Label="{DynamicResource t_BirthDate}" Change="BirthDate_Change"/>
+            <element:InputText x:Name="Age" Label="{DynamicResource t_Age}"/>
+            <!-- immortal_age -->
+            <!-- base_weight -->
+            <!-- current_weight -->
+            <!-- target_weight -->
+            <element:InputSelect x:Name="Gender" Label="{DynamicResource t_Gender}"/>
+            <element:InputSelect x:Name="SexualOrientation" Label="{DynamicResource t_SexualOrientation}"/>
+
+            <element:InputText x:Name="DNAHex" Label="{DynamicResource t_DNAHex}" Change="DNAHex_Change"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="1" Margin="10">
+
+            <element:InputText x:Name="Gold" Label="{DynamicResource t_Gold}" Change="Gold_Change"/>
+            <element:InputText x:Name="Prestige" Label="{DynamicResource t_Prestige}" Change="Prestige_Change"/>
+            <element:InputText x:Name="Piety" Label="{DynamicResource t_Piety}" Change="Piety_Change"/>
+            <element:InputText x:Name="Stress" Label="{DynamicResource t_Stress}" Change="Stress_Change"/>
+            <element:InputText x:Name="Dread" Label="{DynamicResource t_Dread}" Change="Dread_Change"/>
+            <element:InputText x:Name="Fertility" Label="{DynamicResource t_Fertility}" Change="Fertility_Change"/>
+            <element:InputText x:Name="MaxFertility" Label="{DynamicResource t_MaxFertility}" Change="MaxFertility_Change"/>
+            <element:InputText x:Name="Health" Label="{DynamicResource t_Health}" Change="Health_Change"/>
+            <element:InputText x:Name="MaxHealth" Label="{DynamicResource t_MaxHealth}" Change="MaxHealth_Change"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="2" Margin="10">
+            <Label Content="{DynamicResource t_BaseStats}" FontWeight="SemiBold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+            <element:InputText x:Name="BaseStatsDiplomacy" Label="{DynamicResource t_Diplomacy}" Change="BaseStatsDiplomacy_Change"/>
+            <element:InputText x:Name="BaseStatsMartial" Label="{DynamicResource t_Martial}" Change="BaseStatsMartial_Change"/>
+            <element:InputText x:Name="BaseStatsStewardship" Label="{DynamicResource t_Stewardship}" Change="BaseStatsStewardship_Change"/>
+            <element:InputText x:Name="BaseStatsIntrigue" Label="{DynamicResource t_Intrigue}" Change="BaseStatsIntrigue_Change"/>
+            <element:InputText x:Name="BaseStatsLearning" Label="{DynamicResource t_Learning}" Change="BaseStatsLearning_Change"/>
+            <element:InputText x:Name="BaseStatsProwess" Label="{DynamicResource t_Prowess}" Change="BaseStatsProwess_Change"/>
+
+            <Label Content="{DynamicResource t_ModifiedStats}" FontWeight="SemiBold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+            <element:InputText x:Name="ModifiedStatsDiplomacy" Label="{DynamicResource t_Diplomacy}" Change="ModifiedStatsDiplomacy_Change"/>
+            <element:InputText x:Name="ModifiedStatsMartial" Label="{DynamicResource t_Martial}" Change="ModifiedStatsMartial_Change"/>
+            <element:InputText x:Name="ModifiedStatsStewardship" Label="{DynamicResource t_Stewardship}" Change="ModifiedStatsStewardship_Change"/>
+            <element:InputText x:Name="ModifiedStatsIntrigue" Label="{DynamicResource t_Intrigue}" Change="ModifiedStatsIntrigue_Change"/>
+            <element:InputText x:Name="ModifiedStatsLearning" Label="{DynamicResource t_Learning}" Change="ModifiedStatsLearning_Change"/>
+            <element:InputText x:Name="ModifiedStatsProwess" Label="{DynamicResource t_Prowess}" Change="ModifiedStatsProwess_Change"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="3" Margin="10">
+            <element:InputText x:Name="LifestyleDiplomacy" Label="{DynamicResource t_Diplomacy}" Change="LifestyleDiplomacy_Change"/>
+            <element:InputText x:Name="LifestyleMartial" Label="{DynamicResource t_Martial}" Change="LifestyleMartial_Change"/>
+            <element:InputText x:Name="LifestyleStewardship" Label="{DynamicResource t_Stewardship}" Change="LifestyleStewardship_Change"/>
+            <element:InputText x:Name="LifestyleIntrigue" Label="{DynamicResource t_Intrigue}" Change="LifestyleIntrigue_Change"/>
+            <element:InputText x:Name="LifestyleLearning" Label="{DynamicResource t_Learning}" Change="LifestyleLearning_Change"/>
+
+            <Label Content="{DynamicResource t_Focus}" FontWeight="SemiBold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+            <element:InputText x:Name="FocusType" Label="{DynamicResource t_FocusType}" Change="FocusType_Change"/>
+            <element:InputText x:Name="FocusStartDate" Label="{DynamicResource t_StartDate}" Change="FocusStartDate_Change"/>
+            <element:InputText x:Name="FocusEndDate" Label="{DynamicResource t_EndDate}" Change="FocusEndDate_Change"/>
+            <element:InputText x:Name="FocusChanges" Label="{DynamicResource t_Changes}" Change="FocusChanges_Change"/>
+            <element:InputText x:Name="FocusProgress" Label="{DynamicResource t_Progress}" Change="FocusProgress_Change"/>
+        </StackPanel>
+
+        <StackPanel x:Name="TraitListWrapper" Orientation="Vertical" Grid.IsSharedSizeScope="True" Grid.Row="0" Grid.Column="4" Margin="10">
+            <element:DynamicList 
+                x:Name="TraitListViewer" 
+                HorizontalAlignment="Stretch" 
+                Height="{Binding ElementName=TraitListWrapper, Path=ActualHeight}"
+                Update="TraitList_Change"
+                />
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>

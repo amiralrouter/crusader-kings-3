@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:component="clr-namespace:Crusader_Kings_3.Component"
+    xmlns:element="clr-namespace:Crusader_Kings_3.Element"
     >
  
     
@@ -11,10 +11,10 @@
 
     <Style TargetType="StackPanel">
         <Style.Resources>
-            <Style TargetType="{x:Type component:InputText}">
+            <Style TargetType="{x:Type element:InputText}">
                 <Setter Property="Margin" Value="0,0,0,10"/> 
             </Style>
-            <Style TargetType="{x:Type component:InputSelect}">
+            <Style TargetType="{x:Type element:InputSelect}">
                 <Setter Property="Margin" Value="0,0,0,10"/>
             </Style>
         </Style.Resources>
